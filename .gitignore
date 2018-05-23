@@ -1,0 +1,16 @@
+Source/DoorPanes/DoorPanes.WebApp/bin/
+Source/DoorPanes/DoorPanes.WebApp/obj/
+Source/DoorPanes/DoorPanes.WebApi/bin/
+Source/DoorPanes/DoorPanes.WebApi/obj/
+Source/DoorPanes/src/DoorPanes/obj/
+Source/DoorPanes/.vs/
+Source/DoorPanes/DoorPanes.WebApp/App_Data/
+Source/DoorPanes/DoorPanes.WebApp.Test/bin/
+Source/DoorPanes/DoorPanes.WebApi.Test/obj/
+Source/DoorPanes/DoorPanes.WebApp.Test/obj/
+Source/DoorPanes/DoorPanes.WebApi.Test/bin/
+Source/DoorPanes/packages/
+Source/DoorPanes/DoorPanes.Services/bin/
+Source/DoorPanes/DoorPanes.Services/obj/
+Source/DoorPanes/TestResults/
+Source/DoorPanes/DoorPanes.WebApi/Controllers/obj/

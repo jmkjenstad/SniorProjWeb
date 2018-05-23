@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home";
+
+}
+
+<div class="jumbotron">
+    <h1>DoorPanes</h1>
+    <p class="lead">Create and update your schedule from anywhere. Display it for everyone. </p>
+    <p>@Html.ActionLink("Learn more", "About", "Home", new { @class = "btn btn-primary btn-lg" })</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Why DoorPanes?</h2>
+        <p>DoorPanes makes creating and updating class schedules for instructors and office personal a breeze.</p>
+        <p>@Html.ActionLink("Learn more", "About", "Home", new { @class = "btn btn-default" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Who uses DoorPanes?</h2>
+        <p>DoorPanes is primarily used in educational institutions right now. Find out if your school uses DoorPanes!</p>
+        <p><a class="btn btn-default" href="http://www.sdsmt.edu">Find my school &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>How do I get DoorPanes?</h2>
+        <p>You can sign up for DoorPanes today! Click below to see more detailed pricing and availablility information.</p>
+        <p><a class="btn btn-default" href="http://www.sdsmt.edu">Pricing and availability &raquo;</a></p>
+    </div>
+</div>

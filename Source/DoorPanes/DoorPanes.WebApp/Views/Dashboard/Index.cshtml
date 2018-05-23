@@ -1,0 +1,122 @@
+﻿@using DoorPanes.Services.Models;
+@using Microsoft.AspNet.Identity;
+@using Microsoft.AspNet.Identity.EntityFramework;
+
+@{
+    ViewBag.Title = "Dashboard";
+
+    ApplicationDbContext db = new ApplicationDbContext();
+    var userStore = new UserStore<ApplicationUser>(db);
+    var userManager = new UserManager<ApplicationUser>(userStore);
+
+    List<string> roomNumbersList = new List<string>();
+    var firstRole = userManager.GetRoles(User.Identity.GetUserId()).FirstOrDefault();
+    switch (firstRole)
+    {
+        case "Staff":
+            // get a list of rooms to see if you are a faculty member
+            roomNumbersList = db.Rooms.Select(e => e.RoomNumber).OrderBy(x => x).ToList();
+            break;
+        case "Faculty":
+
+            break;
+
+        case "Student":
+            // get a list of rooms to see if you are a faculty member
+            roomNumbersList = db.Rooms.Select(e => e.RoomNumber).OrderBy(x => x).ToList();
+            break;
+    }
+}
+
+<script>
+    // function is called when a room is slected from the dropdown list
+    function ReloadPageWithRoomNumber(val)
+    {
+        var data = {
+            'roomNumber': val
+        };
+        $.ajax({
+            type: 'POST',
+            url: "/Dashboard/RefreshForCurrentRoom",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            async: false,
+            success: function (response) {},
+            error: function (response) {
+                alert('Error! Could not update room number!');
+            }
+        });
+        location.reload(); // reload the page
+    }
+</script>
+
+<h2>@ViewBag.Title</h2>
+
+<p id="currentUser">Hello, @User.Identity.Name. You are logged in with a role of @firstRole.</p>
+
+<div class="roomListView" style="padding: 20px 0px;">
+    @{ 
+        if (firstRole == "Faculty")
+        {
+           <p>You are currently registered with the room number of @ViewBag.CurrentRoom.</p>
+        }
+        else if (firstRole == "Staff")
+        {
+            <p>Currently viewing room @ViewBag.CurrentRoom.</p>
+
+            // build dropdown list for staff to view
+            var roomSelectList = new SelectListItem[roomNumbersList.Count];
+            for (int i = 0; i < roomNumbersList.Count; ++i)
+            {
+                roomSelectList[i] = new SelectListItem() { Text = roomNumbersList[i], Value = roomNumbersList[i] };
+            }
+            <p>Select a different room:</p>
+            @Html.DropDownList("RoomNumbers", roomSelectList, "", new { @onchange = "ReloadPageWithRoomNumber(this.value)" })
+        }
+        else if (firstRole == "Student")
+        {
+            <p>Currently viewing room @ViewBag.CurrentRoom as a student.</p>
+
+            // build dropdown list for staff to view
+            var roomSelectList = new SelectListItem[roomNumbersList.Count];
+            for (int i = 0; i < roomNumbersList.Count; ++i)
+            {
+                roomSelectList[i] = new SelectListItem() { Text = roomNumbersList[i], Value = roomNumbersList[i] };
+            }
+            <p>Select a different room:</p>
+            @Html.DropDownList("RoomNumbers", roomSelectList, "", new { @onchange = "ReloadPageWithRoomNumber(this.value)" })
+        }
+    }
+</div>
+
+<div id='calendar'></div>
+
+<!-- Calendar add popup html -->
+<div id="popupEventForm" class="modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header"><h3>Add new event</h3></div>
+        <div class="modal-body">
+            <form id="EventForm" class="well">
+                <input type="hidden" id="eventID">
+                <label>Event title</label>
+                <input type="text" id="eventTitle" placeholder="Title here"><br />
+                <label>Date</label>
+                <input type="text" id="dateBox"><br />
+                <label>Start time</label>
+                <input type="text" id="startTime"><br />
+                <label>End time</label>
+                <input type="text" id="endTime"><br />
+                <input type="checkbox" name="canceled" id="cancelCheckbox" value="Bike"> Canceled<br>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="btnPopupDelete" data-dismiss="modal" class="btn">Delete</button>
+            <button type="button" id="btnPopupCancel" data-dismiss="modal" class="btn">Cancel</button>
+            <button type="button" id="btnPopupSave" data-dismiss="modal" class="btn btn-primary">Save event</button>
+        </div>
+    </div>
+</div>
+
+@Styles.Render("~/bundles/fullcalendarcss")
+@Scripts.Render("~/bundles/fullcalendarjs")

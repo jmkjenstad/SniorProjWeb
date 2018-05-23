@@ -1,0 +1,168 @@
+\documentclass{article}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tabto}
+\usepackage{tabularx}
+
+\definecolor{TitleColor}{rgb}{0.0, 0.0, 0.5}
+\definecolor{SectionColor}{rgb}{0.0, 0.0, 0.7}
+\definecolor{SubsectionColor}{rgb}{0.0, 0.0, 0.8}
+
+\titleformat{\section}{\normalfont\Large\bfseries\color{SectionColor}}{\thesection}{1em}{}[{\titlerule[2.0pt]}]
+\titleformat{\subsection}{\normalfont\bfseries\color{SubsectionColor}}{\thesection}{1em}{}
+
+\title{\normalfont\Large\bfseries\color{TitleColor}Sprint Report \#5}
+\date{\normalfont\bfseries\color{TitleColor}\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Team Overview}
+\subsection*{Project}
+\tab{DoorPanes}
+
+\subsection*{Members}
+\begin{itemize}
+	\item Andrew Fagrey
+	\item Jayson Kjenstad
+	\item Samantha Kranstz
+\end{itemize}
+
+\subsection*{Sponsor}
+\begin{itemize}
+	\item Dr. Jeff McGough
+	\item Dr. Christer Karlsson
+	\item Brian Butterfield
+\end{itemize}
+
+\subsection*{Client Meeting Time}
+\tab{Thursday at 10:00 a.m.
+
+\section*{Sprint Overview}
+In this sprint, we wanted to focus on testing and getting calendar events to move back and forth between the database in the cloud and the tablet app. We were able to get a large portion of the testing done, and we were also able to achieve getting calendar events to move between the database and the tablet app. Event creation and deletion from the web app is working as well. Looking forward to the next sprint, we will try and get the authentication portion of this project completed. We would also like to be able to switch between different calendar views in the future as well. 
+
+\section*{Setbacks}
+\subsection{Tablet Application Development Change}
+
+Here's a list of a few things that we struggled with this sprint:
+
+\begin{itemize}
+\item Testing JSON responses on the tablet app
+\item By range endpoint was delayed
+\end{itemize}
+
+\section*{Deliverables}
+\begin{itemize}
+\item Calendar event creation
+\item Calendar event synchronization
+\end{itemize}
+
+\section*{Activities}
+\subsection*{Team}
+\begin{itemize}
+\item Worked to understand concepts.
+\item Research on how parts of our project work.
+\item Flushed out database schematics
+\end{itemize}
+
+\subsection*{Andrew Fagrey}
+\begin{itemize}
+\item Web App unit testing
+\item Wrote back-end JavaScript for calendar framework
+\item Wrote code for adding and deleting calendar events
+\item Wrote code for saving events in the database
+\end{itemize}
+
+\subsection*{Jayson Kjenstad}
+\begin{itemize}
+\item JSON synchronization
+\item GUI testing
+\item Unit tests for login screen
+\item GUI modifications
+\item Calendar description window
+\end{itemize}
+
+\subsection*{Samantha Kranstz}
+\begin{itemize}
+\item Lots of unit testing
+\item Model changes
+\item Fixed various endpoints
+\end{itemize}
+
+\subsection*{Work that is carried over into Sprint 6 is as follows:}
+\begin{itemize}
+\item Get by range endpoint
+\item Security
+\item Authorization and login information
+\end{itemize}
+
+\section*{Backlog}
+\subsection*{Azure}
+\begin{itemize}
+\item Set up Azure
+\item Create Azure database
+\item User Authentication
+\item App Communication
+\end{itemize}
+
+\subsection*{Web Application}
+\begin{itemize}
+\item Design Wireframes
+\item Code the user interface according to wireframes
+\item Create project and test project
+\item Create website login screen
+\item Communicate with Azure
+\item Create schedule templates
+\item Create send and receive message system
+\item Open calendar framework JSON events
+\item Connect calendar event creation to database
+\item Load events from database when navigating to dashboard controller
+\item Remove authorization code
+\end{itemize}
+
+\subsection*{Web API}
+\begin{itemize}
+\item Create Professor Model
+\item Create Office Personnel Model
+\item Create Calendar Event Model
+\item Create Student Model
+\item Model Location
+\item Create GetCalendarEvent endpoint
+\item Create GetCalendarEvents endpoint
+\item Create GetCalendarEventByOwner endpoint
+\item Create GetCalendarEventsByDate
+\item Create SaveCalendarEvents endpoint
+\item Repository Layer
+\item Serialize data
+\item Migration on database
+	\item Create project and test project
+\end{itemize}
+
+\subsection*{Tablet Application}
+\begin{itemize}
+\item Design Wireframes
+\item Code the user interface according to wireframes
+\item Create room login screen
+\item Design and create splash screen
+\item Enable tablet to connect to Azure
+\item Create communication class
+\item Display a message on tablet screen
+\item Display schedule on tablet	
+\item Put tablet in kiosk mode
+\item Move tablet code
+\end{itemize}
+
+\subsection*{Miscellaneous}
+\begin{itemize}
+	\item Logo
+	\item Learn Azure
+	\item Learn Xamarin
+	\item Connect Visual Studio to Azure
+	\item Look into networking for tablets
+	\item Look into a pre-built calendar framework for displaying calendar events
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,89 @@
+﻿@model DoorPanes.Services.Models.RegisterViewModel
+@using DoorPanes.Services.Models;
+@{
+    ViewBag.Title = "Register";
+
+    // get a list of room numbers
+    ApplicationDbContext dbcontext = new ApplicationDbContext();
+    var roomNumbersList = dbcontext.Rooms.ToList().Select(e => e.RoomNumber).ToList();
+
+    // set person type list
+    var personRoleList = new List<string>();
+    personRoleList.Add("Faculty");
+    personRoleList.Add("Staff");
+}
+
+<script>
+    function ShowRoomNumberboxes() {
+        // get the contexts of the textbox
+        var text = document.getElementById("email-watch-box").value;
+        var domain = text.substring(text.indexOf("@@") + 1, text.length);
+        if (text.length > 0 && domain === "sdsmt.edu") {
+            $(".room-number-box").show();
+        }
+        else {
+            $(".room-number-box").hide();
+        }
+    }
+</script>
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Create a new account.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @id = "email-watch-box", @onfocusout = "ShowRoomNumberboxes()" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group room-number-box" style="display:none">
+        @Html.LabelFor(m => m.PersonType, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.PersonType, new SelectList(personRoleList), "")
+        </div>
+    </div>
+    <div class="form-group room-number-box" style="display:none">
+        @Html.LabelFor(m => m.RoomNumber, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.RoomNumber, new SelectList(roomNumbersList), "")
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+    }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

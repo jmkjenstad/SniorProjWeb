@@ -1,0 +1,199 @@
+\documentclass{article}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tabto}
+\usepackage{tabularx}
+
+\definecolor{TitleColor}{rgb}{0.0, 0.0, 0.5}
+\definecolor{SectionColor}{rgb}{0.0, 0.0, 0.7}
+\definecolor{SubsectionColor}{rgb}{0.0, 0.0, 0.8}
+
+\titleformat{\section}{\normalfont\Large\bfseries\color{SectionColor}}{\thesection}{1em}{}[{\titlerule[2.0pt]}]
+\titleformat{\subsection}{\normalfont\bfseries\color{SubsectionColor}}{\thesection}{1em}{}
+
+\title{\normalfont\Large\bfseries\color{TitleColor}Sprint Report \#4}
+\date{\normalfont\bfseries\color{TitleColor}\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Team Overview}
+\subsection*{Project}
+\tab{DoorPanes}
+
+\subsection*{Members}
+\begin{itemize}
+	\item Andrew Fagrey
+	\item Jayson Kjenstad
+	\item Samantha Kranstz
+\end{itemize}
+
+\subsection*{Sponsor}
+\begin{itemize}
+	\item Dr. Jeff McGough
+	\item Dr. Christer Karlsson
+	\item Brian Butterfield
+\end{itemize}
+
+\subsection*{Client Meeting Time}
+\tab{Thursday at 10:00 a.m.
+
+\section*{Sprint Overview}
+During this sprint we worked on getting dataflow moving between all the different parts of our project. We created a middleman project that contains the model and data access code for the web application and web API to share. The middle man project was important, because without it we would have  the same endpoint code in the web application and the web API. We decided to create this middle man project to maximize code reuse. \newline
+
+\noindent Also a great amount of progress was completed for the tablet application in this sprint. The tablet application now can actually make Http get requests and pull down seeded data from the Azure database. The tablet application uses Retrofit for making the Http requests from the Azure web API.
+
+\section*{Setbacks}
+\subsection{Tablet Application Development Change}
+
+Here's a list of a few things that we struggled with this sprint:
+
+\begin{itemize}
+\item Database seeding and migrations problems (didn't understand how they work)
+\item Tablet application retrofit requests took a while to understand and get working
+\item GUID usage
+\item Database permissions and authorization
+\end{itemize}
+
+\section*{Deliverables}
+\begin{itemize}
+\item Making a get request to an Azure server from the tablet application and getting JSON returned
+\item Displaying JSON calendar events on the tablet application screen
+\item Understand tablet class layout
+\item Return actual JSON from web API endpoints
+\item Updated getByOwner endpoint
+\item Updated web API models
+\item Understand GUID principles 
+\item Load events from database
+\item Connect web application database to Azure
+\item Created middle man project for Web application and web API to share
+\item Display calendar events on the calendar framework on the web application
+\end{itemize}
+
+\section*{Activities}
+\subsection*{Team}
+\begin{itemize}
+\item Worked to understand concepts.
+\item Research on how parts of our project work.
+\end{itemize}
+
+\subsection*{Andrew Fagrey}
+\begin{itemize}
+\item Worked with Samantha on understanding and developing the API.
+\item Worked to understand the JSON storage in the open source calendar framework used in the web application.
+\item Worked on displaying calendar events on web app calendar framework
+\item Worked on web app database issues.
+\end{itemize}
+
+\subsection*{Jayson Kjenstad}
+\begin{itemize}
+\item Worked on the tablet application.
+\item Finalized the transition to native Android
+\item Used Retrofit Get requests to pull A JSON endpoint using the Web API
+\item Parsed JSON responses into usable data
+\item Created CalendarEvent model
+\item Minor GUI modifications
+\item Mapped out class hierarchy 
+
+\end{itemize}
+
+\subsection*{Samantha Kranstz}
+\begin{itemize}
+\item Researched Guid and permissions.
+\item Updated API endpoint get by owner.
+\item Updated API models.
+\end{itemize}
+
+
+\subsection*{Work that is carried over into Sprint 5 is as follows:}
+\begin{itemize}
+\item Finish calendar event endpoints.
+\item Email authorization.
+\item Changing keys to Guids.
+\item Create Realm objects.
+\end{itemize}
+
+\section*{Backlog}
+\subsection*{Azure}
+\begin{itemize}
+\item Set up Azure
+\item Create Azure database
+\item User Authentication
+\item App Communication
+\end{itemize}
+
+\subsection*{Web Application}
+\begin{itemize}
+\item Design Wireframes
+\item Code the user interface according to wireframes
+\item Create project and test project
+\item Create website login screen
+\item Communicate with Azure
+\item Create schedule templates
+\item Create send and receive message system
+\item Open calendar framework JSON events
+\item Connect calendar event creation to database
+\item Load events from database when navigating to dashboard controller
+\item Remove authorization code
+\end{itemize}
+
+\subsection*{Web API}
+\begin{itemize}
+\item Create Professor Model
+\item Create Office Personnel Model
+\item Create Calendar Event Model
+\item Create Student Model
+\item Model Location
+\item Create GetCalendarEvent endpoint
+\item Create GetCalendarEvents endpoint
+\item Create GetCalendarEventByOwner endpoint
+\item Create GetCalendarEventsByDate
+\item Create SaveCalendarEvents endpoint
+\item Repository Layer
+\item Serialize data
+\item Migration on database
+	\item Create project and test project
+\end{itemize}
+
+\subsection*{Tablet Application}
+\begin{itemize}
+\item Design Wireframes
+\item Code the user interface according to wireframes
+\item Create room login screen
+\item Design and create splash screen
+\item Enable tablet to connect to Azure
+\item Create communication class
+\item Display a message on tablet screen
+\item Display schedule on tablet	
+\item Put tablet in kiosk mode
+\item Move tablet code
+\end{itemize}
+
+\subsection*{Student Mobile App}
+\begin{itemize}
+\item Design Wireframes
+\item Code the user interface according to wireframes
+\item Create project and test project
+\item Create app login screen
+\item Communicate with Azure
+\item Create send and receive message system
+\item Allow push notifications on mobile app
+\item Allow user to view professor and classroom schedules
+\item Create request form for meeting with instructor
+\item Create request form for a classroom reservation 
+\end{itemize}
+
+\subsection*{Miscellaneous}
+\begin{itemize}
+	\item Logo
+	\item Learn Azure
+	\item Learn Xamarin
+	\item Connect Visual Studio to Azure
+	\item Look into networking for tablets
+	\item Look into a pre-built calendar framework for displaying calendar events
+\end{itemize}
+
+\end{document}

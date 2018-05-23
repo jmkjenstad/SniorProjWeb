@@ -1,0 +1,194 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX root = DesignDocument.tex
+
+\documentclass{book}
+
+\usepackage[titletoc]{appendix}
+
+\usepackage{footmisc}
+
+\input{seniordesignstyle.tex} % This sets the format.
+
+% Add your title page contents here 
+\title{{\color{SDColor3} \rule{\linewidth}{0.5mm}}\\[2mm] {\huge \bfseries \color{SDColor3} DoorPanes}\\[-1mm] {\color{SDColor3}\rule{\linewidth}{0.5mm}} \\  \vfill
+{\LARGE \bfseries \color{SDColor4} Senior Design Final Documentation }\\  \vfill 
+{\color{SDColor3} DoorPanes Team} }
+\author{\color{SDColor3}  Andrew Fagrey \and \color{SDColor3} Jayson Kjenstad \and  \color{SDColor3} Samantha Kranstz }
+\date{\color{SDColor3} \today}
+
+\begin{document}
+
+\frontmatter
+
+\addcontentsline{toc}{chapter}{Title}
+\maketitle
+\tableofcontents
+\addcontentsline{toc}{chapter}{Contents}
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+%\listofalgorithms
+%\addcontentsline{toc}{chapter}{List of Algorithms}
+
+\chapter{Overview Statements}
+\input{mission.tex}  % add mission statement to mission.tex
+
+\chapter{Document Preparation and Updates}
+\input{preparation.tex}
+ 
+\mainmatter
+
+%% The term "cleaning" used in the syllabus means removing all of the sample content I
+%% have provided.   You can comment out by using the comment character or the comment
+%% environment.  
+
+%%  Add to the following chapters
+
+\input{overview.tex}  %% All tracks
+\input{requirements.tex}  %% All tracks (minimal for research track)
+\input{project.tex}   %% All tracks
+\input{design.tex}  %% All tracks
+\input{testing.tex}  %% All tracks
+\input{prototypes.tex}  %% All tracks
+%\input{deploy.tex}  %% Normally not research track
+\input{userdocs.tex} %% All tracks
+%\input{refman.tex}  %% All tracks
+\input{quickstart.tex}
+%\input{businessplan.tex}   %% Entrepreneur track only 
+%\input{log.tex}   %% Research track  only
+%\input{results.tex}  %% Research track  only
+
+\bibliographystyle{plain}
+\bibliography{designrefs.bib}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+
+% We want to add the Software agreement to the end and number the
+% pages separately from the document.  We don't want to do a standard
+% chapter heading, but we do want it to appear in the table of contents
+% and in the index used for on-line viewing.  We defined the \agreement
+% macro to set things up for us.
+\agreement
+
+\chapter{Software Agreement}
+\includepdf[pages={1-5}]{SoftwareContract.pdf}
+
+% In our style file, appendices are numbered with capital letters
+
+\appendix
+\chapter{Future Work Suggestions}
+\label{FutureAppendix}
+One item of work that could be completed is creating a way to send and receive messages inside the system. Also creating a push notification feature that informs certain students of a class being canceled or moved. Another push notification to be implemented would consist of allowing a student or faculty member the ability to send a request to reserve a room to a staff member. Another item of work that could be implemented is comparing and analyzing multiple faculty schedules to find common free times to help set up meetings.  Other work that could be added is expanding room and faculty controllers to narrow down the returned sorted lists to a particular building or department. An example of this would be adding an endpoint to the room controller that takes in a building, like McLaury, and returns only rooms located in that building. Similarly, adding an endpoint to faculty controller that has a parameter of a department, and a list of faculty members for that particular department are the only ones returned. \\\\
+The one deliverable that was unable to be delivered was the mobile student application. The rough draft for the backlog is as follows:
+\subsection*{Student Mobile App Backlog}
+\begin{itemize}
+	\item Design Wireframes
+	\item Code the user interface according to wireframes
+	\item Create student model
+	\item Create app login screen
+	\item Communicate with Azure
+	\item Create send and receive message system
+	\item Allow push notifications on mobile app
+	\item Allow user to view professor and classroom schedules
+	\item Create request form for meeting with instructor
+	\item Create request form for a classroom reservation 
+\end{itemize}
+
+
+\chapter{Xamarin}
+\label{XamarinAppendix}
+\href{https://www.xamarin.com/}{Xamarin} was the original plan for tablet application development. \\
+
+Our team had a very major change come up during Sprint 3.  We made the decision to abort the use of Xamarin for our tablet and mobile applications.  Early on in the process, development in Xamarin was going ok.  Development was being done on the user interface so a user could log in and view the dashboard where the calendar informations will be displayed.  It didn't take long into sprint 2 to run into some very major problems. Xamarin was not able to find and link in the needed appcompat files.  AppCompat is a set of libraries which allow for areas of the application to be developed in a newer version and at the same time work with older API levels. Due to this problem, we were not able to add anything in our application such as themes, action bars, or navigation drawers.  This made it impossible for us to create a user interface at a high enough level needed for this product.\\  
+
+\noindent As a team we spent over a hundred man hours trying to figure out what the problem was.  We researched what was causing this problem and there were dozens of solutions found which enabled Xamarin to find all the needed AppCompat files. Our team did everything from adding/removing android API levels, chenging target API levels, deleting and redownloading the libraries, and completly removing and redownloading Visual Studio, Xamarin, and Android SDK.  After many attempts with this, and probably too many, we as a team decided it was no longer worth our time.  Also, there is not a lot of support available for Xamarin so it was difficult from the start.  Xamarin discontinued Xamarin Studio for Windows.  Their product seems to be going away from Windows and focusing on OS X. This was one of our theories for why the use of Xamarin forms did not work. \\ 
+
+\noindent We also thought there could be some hardware issue.  Two team members had the exact same environment set up besides for the machine it was running on.  One member was using Fujitsu T902 and the other was running on a slightly newer model, Fujitsu T725. There were no errors building the Xamarin forms project on the T902 laptop.  The project could not build on the T725 tablet with the exact same Visual Studio version, Xamarin version, Android SDK, downloaded API levels, and AppCompat libraries.  After going step by step checking every possible factor we could think of, the project still would not run on the T725 computer.  This is when we made the final decsion that we would talk to our client about the roadblock that Xamarin was causing our project.  We reched out to our client and explained what was happening and it was becoming a major setback. Our client then gave us a few options to move forward from this problem, one being move to native Android development\\
+
+
+Below is a section taken out of chapter 4. Where we described out Xamarin tablet application plans as a major component.
+\subsection{Xamarin Tablet Application}
+
+\subsubsection{Technologies  Used}
+To develop the tablet application for this project, Xamarin is used as a tool for cross-platform development.  Xamarin will be run and compiled in Microsoft Visual Studio 2015 Enterprise edition. All testing for this project will be used on a Samsung Galaxy Tab 8A tablet running Android version 6.0 (Marshmallow) The target level for the execution of this application will be Android 6.0, API level 23.\\
+
+In summary, here are the technologies used:
+
+\begin{itemize}
+\item Microsoft Visual Studio 2015
+\item Xamarin
+\item Android SDK - target API level 23
+\item Samsung Galaxy Tab 8A
+\end{itemize}
+
+
+
+\subsubsection{Component  Overview}
+The main goal of the tablet application is to display a schedule for a given classroom or professor. After logged in, a user can cycle through given schedules and look at different views: daily, weekly, and monthly.  There will also be a contact feature that will allow the user to send a message or email to a professor. \\
+
+Here are the components that the tablet application will have when finished:
+
+\begin{itemize}
+\item A login page on application startup
+\item A calendar preview/selection page
+\item Dashboard view for viewing the chosen calendar
+\item Menu which allows user to cycle through calendar views
+\item Professor contact form
+\item Available administrator options
+\end{itemize}
+
+\subsubsection{Phase Overview}
+The application is currently in development.  A log in screen and calendar view have been created.  Right now the navigation drawer is being developed.  The next step is to use the API calls to get dataflow between the cloud service and the tablet.\\
+
+Below is a list of the development phases of the tablet application:
+
+\begin{itemize}
+\item Gathered user stories
+\item Set up Xamarin/Visual Studio environment
+\item Created the login view
+\item Created dashboard view
+\item Create navigation menu (in development)
+\item Use API calls to get calendar information (in development)
+\item Create contact forms (pending)
+\item Create different calendar views (pending)
+\end{itemize} 
+
+
+\subsubsection{ Architecture  Diagram}
+The architecture design for the tablet application is shown in Figure ~\ref{fig:Architecture}. The program will start on a login screen when open. If login is successful, a preview page will be shown. From this preview page, the user can select a schedule to be shown from a list of available schedules from the account. Once selected, the program goes to the dashboard view and then enters kiosk mode. It can only be unlocked with an administrator's username and password.  On this dashboard view, one can cycle through different views by using options in the navigation drawer.  A user can also choose to contact a professor which allows the user to send a message to a professor.
+
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{graph.png}
+  \caption{Architecture Diagram}
+  \label{fig:Architecture}
+
+\end{figure}
+
+%\chapter{Product Description}
+%\input{productdescription.tex}
+
+%\chapter{Publications}   %% Research track 
+%\input{pubs.tex}
+
+\chapter{Sprint Reports}
+\input{sprints.tex}
+
+\chapter{Industrial Experience and Resumes}
+\input{industrial.tex}
+
+\chapter{Acknowledgment}
+\label{SpecialThanks}  
+
+\section*{Thank you}
+We'd like to thank Dr. Jeff McGough for his idea and proposing it as a Senior Design project, and also for his work for Senior Design I. We'd also like to thank Dr. Pyeatt for his work in Senior Design II.
+
+\section*{Special Thanks}
+We like to give a special thank you to Brian Butterfield for his help in guiding us through the project, and we would also like to thank Dr. Christer Karlsson for his help and contributions as well.
+
+
+
+\backmatter
+
+\end{document}
+\grid

@@ -1,0 +1,201 @@
+\documentclass{article}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tabto}
+\usepackage{tabularx}
+
+\definecolor{TitleColor}{rgb}{0.0, 0.0, 0.5}
+\definecolor{SectionColor}{rgb}{0.0, 0.0, 0.7}
+\definecolor{SubsectionColor}{rgb}{0.0, 0.0, 0.8}
+
+\titleformat{\section}{\normalfont\Large\bfseries\color{SectionColor}}{\thesection}{1em}{}[{\titlerule[2.0pt]}]
+\titleformat{\subsection}{\normalfont\bfseries\color{SubsectionColor}}{\thesection}{1em}{}
+
+\title{\normalfont\Large\bfseries\color{TitleColor}Sprint Report \#6}
+\date{\normalfont\bfseries\color{TitleColor}\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Team Overview}
+\subsection*{Project}
+\tab{DoorPanes}
+
+\subsection*{Members}
+\begin{itemize}
+	\item Andrew Fagrey
+	\item Jayson Kjenstad
+	\item Samantha Kranstz
+\end{itemize}
+
+\subsection*{Sponsor}
+\begin{itemize}
+	\item Dr. Jeff McGough
+	\item Dr. Christer Karlsson
+	\item Brian Butterfield
+\end{itemize}
+
+\subsection*{Client Meeting Time}
+\tab{Thursday at 10:00 a.m.
+
+\section*{Sprint Overview}
+In this sprint, we wanted to focus on finishing the getby endpoints so the tablet could view the calendar events based on a given calendar.  We got endpoints created to get all the calendar events in the database filtered by a range and a room or range and a faculty member. The tablet is able to log in using token based authentication, choose a calendar to view, and view all the events based on what was chosen. On the Web App part of the project, we wanted to register and distinguish between certain roles. We are now able to know whether a faculty member or a student logs in.  A lot of work was done updating the database models.  The models needed to be broken up into separate tables. References needed to be created between tables in the database. 
+
+\section*{Setbacks}
+\subsection{Tablet Application Development Change}
+
+Here's a list of a few things that we struggled with this sprint:
+
+\begin{itemize}
+\item Hardware issues
+\item JavaScript learning curve
+\end{itemize}
+
+\section*{Deliverables}
+\begin{itemize}
+\item Web App
+\begin{itemize}
+\item Database table integration
+\item Database table referencing
+\item Person detection based on Role
+\item Registration Process
+\item Different login views based on users
+\item Repetition calendar event auto generate
+\end{itemize}
+\item Tablet App
+\begin{itemize}
+\item Added a view to select calendar based on faculty or room
+\item Token authentication
+\item GUI modifications
+\end{itemize}
+\item Web API
+\begin{itemize}
+\item Room table
+\item Get sorted lists of Rooms and Faculty members
+\item Endpoint GetCalendarEventsByRange and Owner
+\item Endpoint GetCalendarEventsByRange and Room
+\item Fixed GetByFaculty and GetByRoom
+\item Updated models
+\item login and register enabled
+\end{itemize}
+\end{itemize}
+
+\section*{Activities}
+\subsection*{Team}
+\begin{itemize}
+\item Endpoints working correctly
+\item All components interconnect correctly
+\end{itemize}
+
+\subsection*{Andrew Fagrey}
+\begin{itemize}
+\item Database table integration
+\item Database table referencing
+\item Person detection based on Role
+\item Registration Process
+\item Added view for distinguished users
+\item Wrote endpoint to return a list of rooms or faculty members
+\end{itemize}
+
+\subsection*{Jayson Kjenstad}
+\begin{itemize}
+\item Token based authentication
+\item Added view to select calendar filter
+\item GUI modifications
+\end{itemize}
+
+\subsection*{Samantha Kranstz}
+\begin{itemize}
+\item Wrote GetbyRange endpoints
+\item Sorted return lists of faculty and room
+\item Model changes
+\item Room seeding
+\item Fixed various endpoints
+\item Wrote update calendar event
+\item Wrote endpoint for auto generating calendar events
+\end{itemize}
+
+\subsection*{Work remaining before Senior Design Fair is as follows:}
+\begin{itemize}
+\item Design poster board
+\item Documentation
+\item Testing
+\item JavaScript repetition
+\item JavaScript permissions
+\item JavaScript cancel update
+\item Aesthetics
+\end{itemize}
+
+\section*{Prototype}
+This sprint, we came very close to finishing the MVP. Both of our clients said that we were making good progress, and we expect to be finished with the final prototype within a few weeks. 
+
+\section*{Backlog}
+\subsection*{Azure}
+\begin{itemize}
+\item Set up Azure
+\item Create Azure database
+\item User Authentication
+\item App Communication
+\end{itemize}
+
+\subsection*{Web Application}
+\begin{itemize}
+\item Design Wireframes
+\item Code the user interface according to wireframes
+\item Create project and test project
+\item Create website login screen
+\item Communicate with Azure
+\item Create schedule templates
+\item Create send and receive message system
+\item Open calendar framework JSON events
+\item Connect calendar event creation to database
+\item Load events from database when navigating to dashboard controller
+\item Remove authorization code
+\end{itemize}
+
+\subsection*{Web API}
+\begin{itemize}
+\item Create Professor Model
+\item Create Office Personnel Model
+\item Create Calendar Event Model
+\item Create Student Model
+\item Model Location
+\item Create GetCalendarEvent endpoint
+\item Create GetCalendarEvents endpoint
+\item Create GetCalendarEventByOwner endpoint
+\item Create GetCalendarEventsByDate
+\item Create SaveCalendarEvents endpoint
+\item Repository Layer
+\item Serialize data
+\item Migration on database
+	\item Create project and test project
+\end{itemize}
+
+\subsection*{Tablet Application}
+\begin{itemize}
+\item Design Wireframes
+\item Code the user interface according to wireframes
+\item Create room login screen
+\item Design and create splash screen
+\item Enable tablet to connect to Azure
+\item Create communication class
+\item Display a message on tablet screen
+\item Display schedule on tablet	
+\item Put tablet in kiosk mode
+\item Move tablet code
+\end{itemize}
+
+\subsection*{Miscellaneous}
+\begin{itemize}
+	\item Logo
+	\item Learn Azure
+	\item Learn Xamarin
+	\item Connect Visual Studio to Azure
+	\item Look into networking for tablets
+	\item Look into a pre-built calendar framework for displaying calendar events
+\end{itemize}
+
+\end{document}

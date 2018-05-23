@@ -1,0 +1,224 @@
+'% !TEX root = DesignDocument.tex
+
+\chapter{User Stories,  Requirements, and Product Backlog}
+\section{Overview}
+
+
+The following section of this documentation describes the user stories provided, the requirements, and the product backlog. The user stories are provided by Dr. Jeff McGough, Dr. Christer Karlsson, and Mr. Brian Butterfield. From these user stories we have compiled a list of requirements and a product backlog.\footnote{See Appendix \ref{FutureAppendix}} 
+
+\section{User Stories}
+The given user stories are listed below:
+
+\subsection{User Story \#1}
+As a professor, I would like to display my weekly schedule.  
+\subsubsection{User Story \#1 Breakdown}
+It would be beneficial to show this schedule so students can know when I am available for office hours.  This would reduce the many emails and interruptions while I am working.  It also allows for easier access to my free time, giving the student a more chance to meet with me.
+
+\subsection{User Story \#2} 
+As a professor, I would like to permanently update my schedule with ease.  
+\subsubsection{User Story \#2 Breakdown}
+It is a nuisance to re-print a paper schedule every time it updates.  I would like to be able to update a change to my schedule within a matter of seconds.
+
+\subsection{User Story \#3} 
+As a professor, I would like to display a message.  
+\subsubsection{User Story \#3 Breakdown}
+It would be helpful to send important and quick messages for everyone to see. This increases the level of communication between faculty and student.
+
+\subsection{User Story \#4} 
+As a professor, I would like to display a message that directly affects my schedule, therefore, also temporarily updates my schedule. 
+\subsubsection{User Story \#4 Breakdown}
+Many things happen which could cancel or modify an event such as a snow day, sick day, or an important meeting.  It is important to keep the students informed as to what is happening with class and office hours.
+
+\subsection{User Story \#5} 
+As the office personnel, I would like to display a current or ongoing event in each classroom/lab. 
+\subsubsection{User Story \#5 Breakdown}
+Displaying a classroom schedule makes it easier for students and faculty to find open classrooms for meetings and events.
+
+\subsection{User Story \#6} 
+As the office personnel, I would like to display each classroom/lab's schedule. 
+\subsubsection{User Story \#6 Breakdown}
+Displaying a classroom schedule makes it easier for students and faculty to find open classrooms for meetings and events.
+
+\subsection{User Story \#7} 
+As the office personnel, I would like to display messages for certain rooms.
+\subsubsection{User Story \#7 Breakdown}
+The ability to quickly post a message on a room would reduce the confusion and hassle when a class is canceled or changed.  It would be way faster than printing a message to manually post on the door.
+
+\subsection{User Story \#8} 
+As the office personnel, I would like to receive and answer request for reservations on rooms. 
+\subsubsection{User Story \#8 Breakdown}
+There are a multitude of events happening throughout the semester at a college campus.  It would be helpful to make the process easier for scheduling all these events.
+
+\subsection{User Story \#9} 
+As a professor or office personnel, I would like the ability to send out push notifications. 
+\subsubsection{User Story \#9 Breakdown}
+A mobile update would most likely reach a student faster than email, so a push notification would be a more efficient way to get information to the students. 
+
+\subsection{User Story \#10} 
+As a student, I would like to request a reservation for a room.  
+\subsubsection{User Story \#10 Breakdown}
+Students have many group projects that require work at school outside of class.  It would help to have a room reserved, so the students don't have to wander around campus in order to find a classroom that appears to be empty.
+
+\subsection{User Story \#11} 
+As a student, I would like to receive push notifications.
+\subsubsection{User Story \#11 Breakdown}
+Receiving a push notification would most likely be a quicker way of getting information regarding classes. The faster the communication, the better.
+
+\subsection{User Story \#12} 
+As a student, I would like to know if the professor is inside his/her office and is available.  
+\subsubsection{User Story \#12 Breakdown}
+Students often need help with homework, advice and feedback from their instructors.  A more accurate schedule for the instructor lessens the time wasted trying to contact the instructor.
+
+\subsection{User Story \#13} 
+As a user, I would like the system to be very secure.  It is important to not have my personal information in the hands of anyone else.
+\subsubsection{User Story \#13 Breakdown}
+In order to have a secure system the following items must be addressed:
+\begin{itemize}
+\item Unauthorized database access
+\item Hardware on the door is in lockdown mode
+\item Verification for individual users
+\end{itemize}
+
+\subsection{User Story \#14} 
+As a user, I would like to be able to log in to the system and be a distinguished user.  Again, security is very important.  I do not want my personal schedule and password in the hands of anyone other than those with the authorized role to view it.
+\subsubsection{User Story \#14 Breakdown}
+After a user logs in, the system displays the correct data and forms.
+
+\section{Requirements and Design Constraints}
+Listed below are details on the requirements and design constraints for this project.
+
+
+\subsection{System  Requirements}
+\begin{itemize}
+\item The tablet application will run on an Android based tablet.
+\item The web application is accessible through any web browser.
+\end{itemize}
+
+\noindent A possible alternative to this system would be to run the tablet application on an ODroid environment. This Odroid environment involves an ODroid, a display screen, a wifi module, an eMMC module, usb camera, and a microSD card.
+
+
+\subsection{Network Requirements}
+In order to use this product, the user must have a connection to the internet. Also any educational institution considering purchasing this product should expect an increase in wi-fi traffic, determined by how many tablets will be installed. 
+
+
+\subsection{Development Environment Requirements}
+The web API and the web application are developed using Microsoft Visual Studio. The tablet application was initially required to be written using Xamarin forms, and, therefore, would have been cross-platform. With the change in requirements, Xamarin will no longer be used and the tablet application will be written in Android native.  
+
+\subsection{Project  Management Methodology}
+Both our client meetings and team meetings take place weekly. During the first semester of this course the client meeting was set for Wednesday at one o'clock p.m., and for the second semester client meetings were scheduled on Thursday at ten o'clock a.m. Both semesters had team meetings on Tuesday at seven o'clock p.m.
+
+
+\section{Specifications}
+The back-end of this product will be handled by Microsoft Azure. Microsoft Azure SQL Database uses Microsoft SQL Server to create, scale and extend the applications into the cloud. 
+
+\section{Product Backlog}
+\subsection*{Azure}
+\begin{itemize}
+\item Set up Azure
+\item Create Azure database
+\item User Authentication
+\item App Communication
+\end{itemize}
+
+\subsection*{Web Application}
+\begin{itemize}
+\item Create Web App project
+\item Upload Web App project to Azure
+\item Create website login screen
+\item Communicate with Azure
+\item Create schedule templates
+\item \#30 Web App - Open calendar framework JSON events
+\item \#31 Web App - Connect calendar event creation to database
+\item \#33 Web App - Load events from database when navigating to dashboard controller
+\item \#35 Create Unit test projects for both the web applications and web API projects
+\item \#37 Web App (TEAM) - Create wireframe for design
+\item Code the user interface according to wireframes
+\item \#58 Web App - Add code to insert calendar events into database
+\item \#59 Web App - Grab JSON from calendar framework
+\item \#60 Web App - Load events from database
+\item Create distinguished views for each type of user
+\item Role based detection
+\item Registration process
+\item Database table integration and referencing
+\item Repetition to generate repeated calendar events
+\item Handle temporary canceled events
+\end{itemize}
+
+\subsection*{Web API}
+\begin{itemize}
+\item Create Web API project
+\item Update Web API project to Azure
+\item Model Location
+\item Repository Layer
+\item Serialize data
+\item Migration on database
+\item Create API endpoints for moving schedule data back and forth
+\item \#24 Web API - Create Professor Model
+\item \#25 Web API - Create Office Personnel Model
+\item \#26 Web API - Create Calendar Event Model
+\item \#27 Web API - Model Location
+\item \#28 Web API - Create GetCalendarEvent endpoint
+\item \#29 Web API - Create GetCalendarEvents endpoint
+\item \#32 Web API - Create SaveCalendarEvents endpoint
+\item \#35 Create Unit test projects for both the web applications and web API projects
+\item \#41 Web API - Repository Layer
+\item \#43 Web API - Serialize data
+\item \#61 Web API - Fix Models
+\item \#62 Web API - Create GetCalendarEventsByOwner endpoint
+\item \#64 Web API - Create GetCalendarEventsByRoom
+\item \#67 Web API - Display options endpoints
+\item \#68 Web API - Create GetCalendarEventsByRange
+\item \#69 Web API - Model updates
+\item Testing
+\end{itemize}
+
+\subsection*{Tablet Application}
+\begin{itemize}
+\item Design and create splash screen
+\item Enable tablet to connect to Azure
+\item Create communication class
+\item Display a message on tablet screen
+\item Display schedule on tablet	
+\item Learn Xamarin\footnote{See Appendix \ref{XamarinAppendix}\label{note1}}
+\item Create Xamarin tablet application with a login page\textsuperscript{\ref{note1}}
+\item \#18 Tablet App - Android Kiosk Mode for Tablet App
+\item \#36 Tablet App - Create Calendar View
+\item \#38 Tablet App (TEAM) - Create wireframe for tablet app
+\item Code the user interface according to wireframes
+\item \#39 Tablet App - Create communications class
+\item \#40 Tablet App - Create a way to display JSON calendar events
+\item \#42 Tablet App - Move Tablet Code
+\item \#53 Android calendar framework JSON function
+\item Create pop-up window with description
+\item Modify week view class open source
+\item Added synchronization button
+\item Implement continuous synchronization
+\item Create login page
+\item Add a view to select calendar based on faculty or room
+\item Token authentication
+\item GUI modifications
+\item Handle temporary canceled events
+\item Testing
+\end{itemize}
+
+\subsection*{Miscellaneous}
+\begin{itemize}
+\item Logo
+\item Research Tablet vs Odroid Options
+\item Connect Visual Studio to Azure
+\item Look into networking for tablets
+\item Look into a pre-built calendar framework for displaying calendar events
+\item Create middleman project
+\item Make sure system is very secure
+\item \#54 Understand how event ownership works
+\end{itemize}
+
+%\section{Research or Proof of Concept Results}
+%This section is reserved for the discussion centered on any research that needed 
+%to take place before full system design.  The research efforts may have led to 
+%the need to actually provide a proof of concept for approval by the stakeholders. 
+% The proof of concept might even go to the extent of a user interface design or 
+%mock-ups. 
+
+
+

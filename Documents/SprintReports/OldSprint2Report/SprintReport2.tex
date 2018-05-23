@@ -1,0 +1,177 @@
+\documentclass{article}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tabto}
+\usepackage{tabularx}
+
+\definecolor{TitleColor}{rgb}{0.0, 0.0, 0.5}
+\definecolor{SectionColor}{rgb}{0.0, 0.0, 0.7}
+\definecolor{SubsectionColor}{rgb}{0.0, 0.0, 0.8}
+
+\titleformat{\section}{\normalfont\Large\bfseries\color{SectionColor}}{\thesection}{1em}{}[{\titlerule[2.0pt]}]
+\titleformat{\subsection}{\normalfont\bfseries\color{SubsectionColor}}{\thesection}{1em}{}
+
+\title{\normalfont\Large\bfseries\color{TitleColor}Sprint Report \#2}
+\date{\normalfont\bfseries\color{TitleColor}\today}
+
+\setlength\parindent{0pt} 
+
+\begin{document}
+
+\maketitle
+
+\section*{Team Overview}
+\subsection*{Project}
+{DoorPanes}
+
+\subsection*{Members}
+\begin{itemize}
+	\item Andrew Fagrey
+	\item Jayson Kjenstad
+	\item Samantha Kranstz
+\end{itemize}
+
+\subsection*{Sponsors}
+\begin{itemize}
+	\item Dr. Jeff McGough
+	\item Dr. Christer Karlsson
+	\item Brian Butterfield
+\end{itemize}
+
+\section*{Sponsor Overview}
+\subsection*{Sponsor Description}
+Dr. Jeff McGough is a Professor at South Dakota School of Mines and Technology in Rapid City, SD. He worked on high performance computing at Sun Microsystems, and has been teaching at SDSM\&T for eighteen years. His research focuses on robotics, applied math, and scientific computing.\newline 
+
+Dr. Christer Karlsson is an assistant Professor at South Dakota School of Mines and Technology in Rapid City, SD. The former Captain in the Swedish Army has been teaching in the Mathematical and Computer Science department for the last four years. He focuses his research on parallel computing and multicore architectures. \newline
+
+Brian Butterfield co-owns Pixel Pines, a local software business in Rapid City, SD. Brian has spent 17 years in the Telecommunications software industry and became the Technology Manager for a billing and operational support system early in his career. He works closely with South Dakota School of Mines and Technology in Rapid City, SD.
+
+\subsection*{Sponsor Goal}
+Program a kiosk mode information display for faculty office doors, meeting room doors, labs etc. Have the display scroll through a user specified/designed system (some hyperlinked system). Have the system on the web and accessible via internet protocol. The system would default to a splash screen sign. It would have links that jump to a schedule (classes, office hours, etc), a contact page with a quick note (sends email in the background), information about homeworks/exams/etc. A collection of these units could be centrally managed.
+
+\subsection*{Sponsor Needs}
+\begin{itemize}
+	\item A door
+	\item A digital display and accompanying hardware
+	\item Web API
+	\item Responsive Web App
+	\item Mobile App
+	\item Cloud-based database
+\end{itemize}
+
+\section*{Project Overview}
+The objective of this project is to produce a working proof of conecpt. The project essentially will be a electronic display on a classroom or faculty office door that has multiple applications communicating with it.   This idea was inspired by Dr. McGough because of his constant agony of producing a permanent schedule for his office door. The teacher application will be a responsive web app, with forums or templates to get his or her schedule and messages across to anyone it may concern more easily. The students will have a mobile app that will be able to receive push notifications about important messages, such as a class has been canceled or moved to a different room.  The student app will also allow the student to request a reservation of a classroom or a meeting with a professor. The project will be organized and maintained in Microsoft Azure. As for hardware for this project, a tablet will be used; however, this project will not mainly be focused on hardware. The tablet will serve the purpose of displaying our application. 
+
+\section*{Project Environment}
+\subsection*{Project Boundaries}
+\begin{itemize}
+	\item Will be used by faculty and students in educational institutions
+	\item Must have university credentials to register and use product
+	\item Source code will be kept in a private Bitbucket repository owned by Dr. McGough
+\end{itemize}
+
+\subsection*{Project Context}
+\begin{itemize}
+	\item The backend for the project will be created using Microsoft Visual Studio and Microsoft Azure
+	\item The mobile and tablet apps will be written using Xamarin
+	\item Mobile application will be coded for both Android and iOS environments
+	\item The project will interface with a tablet
+\end{itemize} 
+
+\section*{Deliverables}
+\begin{itemize}
+	\item Web app login page
+	\item Tablet app login page
+	\item Web app calendar view
+	\item Web app connected to database in cloud
+	\item Researched Xamarin and API
+\end{itemize}
+
+\section*{Backlog}
+\subsection*{Azure}
+\begin{itemize}
+	\item Set up Azure
+	\item Create Azure database
+	\item User Authentication
+	\item App Communication
+\end{itemize}
+
+\subsection*{Database}
+\begin{itemize}
+	\item Design database for professor
+	\item Design database for office personnel
+	\item Design database for student
+\end{itemize}
+
+\subsection*{Tablet App}
+\begin{itemize}
+	\item Design Wireframes
+	\item Code the user interface according to wireframes
+	\item Create room login screen
+	\item Design and create splash screen
+	\item Enable tablet to connect to Azure
+	\item Display a message on tablet screen
+	\item Display schedule on tablet	
+	\item Put tablet in kiosk mode
+\end{itemize}
+
+\subsection*{Teacher / Office Web App}
+\begin{itemize}
+	\item Design Wireframes
+	\item Code the user interface according to wireframes
+	\item Create website login screen
+	\item Communicate with Azure
+	\item Create schedule templates
+	\item Create send and receive message system
+\end{itemize}
+
+\subsection*{Student Mobile App}
+\begin{itemize}
+	\item Design Wireframes
+	\item Code the user interface according to wireframes
+	\item Create app login screen
+	\item Communicate with Azure
+	\item Create send and receive message system
+	\item Allow push notifications on mobile app
+	\item Allow user to view professor and classroom schedules
+	\item Create request form for meeting with instructor
+	\item Create request form for a classroom reservation 
+\end{itemize}
+
+\subsection*{Miscellaneous}
+\begin{itemize}
+	\item Product logo
+	\item Learn Azure
+	\item Learn Xamarin
+	\item Connect Visual Studio to Azure
+	\item Look into networking for tablets
+	\item Look into a prebuilt calendar framework for displaying calendar events
+	\item Color scheme
+\end{itemize}
+
+\pagebreak
+
+\section*{Sprint Report}
+\subsection*{Work for this sprint included:}
+\begin{itemize}
+	\item Created an API project
+	\item Created an Web app project
+	\item Created a Xamarin app project 
+	\item Created a dashboard view
+	\item Edited login pages 
+	\item Started flushing out backlog
+	\item Began integrating open source calendar framework in web app
+\end{itemize}
+
+\subsection*{Remaining Backlog for this semester includes:}
+\begin{itemize}
+   \item Finish Web app
+   \item Finish Tablet app
+   \item Write API calls
+   \item Color scheme and layout
+   \item Product logo
+\end{itemize}
+
+\end{document}

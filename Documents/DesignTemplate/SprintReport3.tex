@@ -1,0 +1,189 @@
+\documentclass{article}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tabto}
+\usepackage{tabularx}
+
+\definecolor{TitleColor}{rgb}{0.0, 0.0, 0.5}
+\definecolor{SectionColor}{rgb}{0.0, 0.0, 0.7}
+\definecolor{SubsectionColor}{rgb}{0.0, 0.0, 0.8}
+
+\titleformat{\section}{\normalfont\Large\bfseries\color{SectionColor}}{\thesection}{1em}{}[{\titlerule[2.0pt]}]
+\titleformat{\subsection}{\normalfont\bfseries\color{SubsectionColor}}{\thesection}{1em}{}
+
+\title{\normalfont\Large\bfseries\color{TitleColor}Sprint Report \#3}
+\date{\normalfont\bfseries\color{TitleColor}\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Team Overview}
+\subsection*{Project}
+\tab{DoorPanes}
+
+\subsection*{Members}
+\begin{itemize}
+	\item Andrew Fagrey
+	\item Jayson Kjenstad
+	\item Samantha Kranstz
+\end{itemize}
+
+\subsection*{Sponsor}
+\begin{itemize}
+	\item Dr. Jeff McGough
+	\item Dr. Christer Karlsson
+	\item Brian Butterfield
+\end{itemize}
+
+\subsection*{Client Meeting Time}
+\tab{Wednesday at 1:00 p.m.
+
+\section*{Sprint Overview}
+During this sprint we started to focus more on the development of the project. Before we started the actual development, however, we made sure to go through the product backlog and break out each requirement into specific issues in Bitbucket. \\
+
+\noindent Once this was done, we started the actual development. We started developing the web API endpoints, as well as starting to develop the tablet application using Xamarin.
+
+\section*{Setbacks}
+\subsection{Tablet Application Development Change}
+Our team had a very major change come up during this sprint.  We made the decision to abort the use of Xamarin for our tablet and mobile applications.  Early on in the process, development in Xamarin was going ok.  Development was being done on the user interface so a user could log in and view the dashboard where the calendar informations will be displayed.  It didn't take long into sprint 2 to run into some very major problems. Xamarin was not able to find and link in the needed appcompat files.  AppCompat is a set of libraries which allow for areas of the application to be developed in a newer version and at the same time work with older API levels. Due to this problem, we were not able to add anything in our application such as themes, action bars, or navigation drawers.  This made it impossible for us to create a user interface at a high enough level needed for this product.\\  
+
+\noindent As a team we spent over a hundred man hours trying to figure out what the problem was.  We researched what was causing this problem and there were dozens of solutions found which enabled Xamarin to find all the needed AppCompat files. Our team did everything from adding/removing android API levels, chenging target API levels, deleting and redownloading the libraries, and completly removing and redownloading Visual Studio, Xamarin, and Android SDK.  After many attempts with this, and probably too many, we as a team decided it was no longer worth our time.  Also, there is not a lot of support available for Xamarin so it was difficult from the start.  Xamarin discontinued Xamarin Studio for Windows.  Their product seems to be going away from Windows and focusing on OS X. This was one of our theories for why the use of Xamarin forms did not work. \\ 
+
+\noindent We also thought there could be some hardware issue.  Two team members had the exact same environment set up besides for the machine it was running on.  One member was using Fujitsu T902 and the other was running on a slightly newer model, Fujitsu T725. There were no errors building the Xamarin forms project on the T902 laptop.  The project could not build on the T725 tablet with the exact same Visual Studio version, Xamarin version, Android SDK, downloaded API levels, and AppCompat libraries.  After going step by step checking every possible factor we could think of, the project still would not run on the T725 computer.  This is when we made the final decsion that we would talk to our client about the roadblock that Xamarin was causing our project.  We reched out to our client and explained what was happening and it was becoming a major setback. Our client then gave us a few options to move forward from this problem, one being move to native Android development.\\
+
+
+\noindent We had originally made the decision to use Xamarin so our single project would run across all mobile platforms.  However, with all the time spent on getting Xamarin to work correctly, we decided we could use that time to first build the application in native android and later to run on iOS. Starting at Sprint 3 we had to completly restart the application develpment, but we were hopeful that develoing native would be a breeze compared to the struggle with Xamarin.  And after just a couple weeks of development the application is already lightyears ahead of what it was during our struggle with Xamarin. As of now we are working hard to catch up on devlopment for the tablet application and hope to be in a good position come to the start of sprint 4.
+
+\subsection{Other Setbacks}
+\noindent Other setbacks included:
+
+\begin{itemize}
+\item Trouble understanding how the API endpoints worked
+\item Getting the database models figured out and having to redo them a few times
+\end{itemize}
+
+\section*{Deliverables}
+\begin{itemize}
+\item Web API endpoints that could save and retrieve calendar event models.
+\item A tablet application concept with login screen and calendar event view.
+\end{itemize}
+
+\section*{Activities}
+\subsection*{Team}
+\begin{itemize}
+\item Worked to understand concepts.
+\item Research.
+\end{itemize}
+
+\subsection*{Andrew Fagrey}
+\begin{itemize}
+\item Worked with Samantha on understanding and developing the API.
+\item Worked to understand the JSON storage in the open source calendar framework used in the web application.
+\item Spent a great deal of time trying to debug the Xamarin issues with Jayson.
+\end{itemize}
+
+\subsection*{Jayson Kjenstad}
+\begin{itemize}
+\item Worked on the tablet application.
+\item Worked on getting Xamarin working.
+\end{itemize}
+
+\subsection*{Samantha Kranstz}
+\begin{itemize}
+\item Worked on understanding the web API.
+\item Developed API endpoints.
+\item Developed API models.
+\end{itemize}
+
+
+\subsection*{Work that is carried over into Sprint 3 is as follows:}
+\begin{itemize}
+\item Finish calendar event endpoints.
+\item Creating web application endpoints for creating and saving JSON calendar events.
+\item Create a solid native Android tablet project.
+\end{itemize}
+
+\section*{Backlog}
+\subsection*{Azure}
+\begin{itemize}
+\item Set up Azure
+\item Create Azure database
+\item User Authentication
+\item App Communication
+\end{itemize}
+
+\subsection*{Web Application}
+\begin{itemize}
+\item Design Wireframes
+\item Code the user interface according to wireframes
+\item Create project and test project
+\item Create website login screen
+\item Communicate with Azure
+\item Create schedule templates
+\item Create send and receive message system
+\item Open calendar framework JSON events
+\item Connect calendar event creation to database
+\item Load events from database when navigating to dashboard controller
+\item Remove authorization code
+\end{itemize}
+
+\subsection*{Web API}
+\begin{itemize}
+\item Create Professor Model
+\item Create Office Personnel Model
+\item Create Calendar Event Model
+\item Create Student Model
+\item Model Location
+\item Create GetCalendarEvent endpoint
+\item Create GetCalendarEvents endpoint
+\item Create GetCalendarEventByOwner endpoint
+\item Create GetCalendarEventsByDate
+\item Create SaveCalendarEvents endpoint
+\item Repository Layer
+\item Serialize data
+\item Migration on database
+	\item Create project and test project
+\end{itemize}
+
+\subsection*{Tablet Application}
+\begin{itemize}
+\item Design Wireframes
+\item Code the user interface according to wireframes
+\item Create room login screen
+\item Design and create splash screen
+\item Enable tablet to connect to Azure
+\item Create communication class
+\item Display a message on tablet screen
+\item Display schedule on tablet	
+\item Put tablet in kiosk mode
+\item Move tablet code
+\end{itemize}
+
+\subsection*{Student Mobile App}
+\begin{itemize}
+\item Design Wireframes
+\item Code the user interface according to wireframes
+\item Create project and test project
+\item Create app login screen
+\item Communicate with Azure
+\item Create send and receive message system
+\item Allow push notifications on mobile app
+\item Allow user to view professor and classroom schedules
+\item Create request form for meeting with instructor
+\item Create request form for a classroom reservation 
+\end{itemize}
+
+\subsection*{Miscellaneous}
+\begin{itemize}
+	\item Logo
+	\item Learn Azure
+	\item Learn Xamarin
+	\item Connect Visual Studio to Azure
+	\item Look into networking for tablets
+	\item Look into a pre-built calendar framework for displaying calendar events
+\end{itemize}
+
+\end{document}

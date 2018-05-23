@@ -1,0 +1,86 @@
+% !TEX root = DesignDocument.tex
+
+
+\chapter{Quick Start Guide}
+% Section Author: Andrew Fagrey
+\section{Web Application} 
+This section describes the details behind getting the web app set up and configured.
+
+\subsection{Azure Setup}
+As students, we were given access to MS Azure through the means of a Microsoft Imagine account. This was the only free account on Azure that we could find (we didn't want to have to spend money on Azure). Some of us on the team already had MS accounts, so those that did just attached the MS Imagine account to the personal account. Those that didn't created a new MS account.\\
+
+Once we had MS accounts set up with Azure, we created a resource group on Azure to hold the various Azure components needed for the project. The components we added to the project were a SQL database, and SQL database server, a web application service, and a service plan. Once these components are added, the Azure setup is mostly complete. Make sure you remember the password you set up with the database.
+
+\subsection{Web App Setup}
+Once Azure is set up, it's not too difficult to publish the web app code to Azure. Make sure the project build correctly, and then right click on the project name, and select the publish option from the list, fill in your Azure credentials, and everything should just work.
+
+\subsection{Full Calendar Framework}
+For the web app, we used the Full Calendar IO package (open source) for handling the front end JavaScript creation of the calendar events. The documentation for the full calendar is actually pretty handy, so check that out.
+
+\section{Web API}
+This part of the documentation will serve as a guide on how to use the endpoints for future work. All return types from the Endpoints are HTTP responses. Each response contains a status code and a content string that is serialize into JSON containing either the reason no events were returned or the expected events. The following will describe the endpoints written for this project:
+
+\subsection{GetCalendarEvents()}
+\begin{itemize}
+\item{Parameters}: none
+\item{Returns OK}: A list containing all the events in the database
+\item{Returns NotFound}: Empty database
+\end{itemize}
+
+\subsection{GetCalendarEventsByOwner()}
+\begin{itemize}
+\item{Parameter}: string Owner, which should be the email associated with the owner
+\item{Returns OK}: Returns all events for the given owner
+\item{Returns NotFound}: Either empty database or no events for the owner
+\item{Returns BadRequest}: Invalid owner was provided
+\end{itemize}
+
+\subsection{GetCalendarEventsByRoom()}
+\begin{itemize}
+\item{Parameter}: string Room
+\item{Returns OK}: Returns all events for the given room
+\item{Returns NotFound}: Either empty database or no events for the room
+\item{Returns BadRequest}: Invalid room was provided
+\end{itemize}
+
+\subsection{GetCalendarEventsByRange\_Owner()}
+\begin{itemize}
+\item{Parameters}: string Semester, string Owner
+\item{Semesters}: spring(January-May), summer(May-August), and fall(August-December)
+\item{Returns OK}: Returns a list of events for given owner in given semester
+\item{Returns NotFound}: Either empty database or no events for the owner and/or semester
+\item{Returns BadRequest}: Invalid owner and/or semester was provided
+\end{itemize}
+
+\subsection{GetCalendarEventsByRange\_Room()}
+\begin{itemize}
+\item{Parameters}: string Semester, string Room
+\item{Semesters}: spring(January-May), summer(May-August), and fall(August-December)
+\item{Returns OK}: Returns a list of events for given room in given semester
+\item{Returns NotFound}: Either empty database or no events for the room and/or semester
+\item{Returns BadRequest}: Invalid room and/or semester was provided
+\end{itemize} 
+
+\subsection{DeleteAllEvents()}
+\begin{itemize}
+\item{Parameters}: none
+\item{Returns OK}: Method worked
+\item{Returns InternalServerError}: Method did not work
+\end{itemize}
+
+\subsection{GetFacultyMembers()}
+\begin{itemize}
+\item{Parameters}: none
+\item{Returns OK}: Returns a list of faculty members sorted by full name
+\item{Returns NotFound}: Empty database, there aren't any faculty members stored
+\end{itemize}
+
+\subsection{GetAllRooms()}
+\begin{itemize}
+\item{Parameters}: none
+\item{Returns OK}: Returns a list of rooms sorted by full name
+\item{Returns NotFound}: Empty database, there aren't any rooms stored
+\end{itemize}
+
+\section{Tablet Application}
+To start development on the Android application, the repository must first be cloned.  All development done on this application was in Android Studio Version 2.2.2.  Open the application in Android Studio and all the files will be there to view and edit.  In depth documentation explaining each file will be in the code itself.
